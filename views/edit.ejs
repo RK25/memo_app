@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+    <head>
+        <h1><%= title %></h1>
+    </head>
+    <div role="main">
+        <form method="post" action="/update">
+            <p>
+                <textarea name="msg" cols="70" rows="20"><%- content.msg.replace(/[\n\r]/g, "<br>") %></textarea>
+                <input type="hidden" name="_method" value="patch">
+                <input type="hidden" id="id_input" name="id" value="<%= id %>">
+            </p>
+            <p><input class="button_change" input type="submit" value="変更"></p>
+        </form>
+    </div>
+</body>
+
+</html>
